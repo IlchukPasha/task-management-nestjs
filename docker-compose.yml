@@ -1,0 +1,20 @@
+version: "2"
+services:
+  adminer:
+    image: adminer:latest
+    container_name: task-management-nestjs.adminer
+    environment:
+      ADMINER_DEFAULT_SERVER: postgres
+    ports:
+      - 3308:8080
+    links:
+      - postgres
+  postgres:
+    image: postgres:11.6
+    container_name: task-management-nestjs.postgres
+    ports:
+      - 5433:5432
+    environment:
+      POSTGRES_DB: task-management
+      POSTGRES_USER: task-management
+      POSTGRES_PASSWORD: task-management
