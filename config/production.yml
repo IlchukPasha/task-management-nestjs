@@ -1,0 +1,5 @@
+server:
+  origin: production-domain.com
+
+db:
+  synchronize: false
